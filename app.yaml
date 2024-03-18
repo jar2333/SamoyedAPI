@@ -14,6 +14,22 @@
 
 runtime: python310
 
+# Commented out because this is going to be the default service
+# service: samoyedapi
+
+# env_variables:
+#   PORT: "8000"
+
+instance_class: F1
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1
+  min_idle_instances: 0
+  max_idle_instances: 0
+
+entrypoint: gunicorn -b :$PORT -w 2 app:app
+
 handlers:
   # This configures Google App Engine to serve the files in the app's static
   # directory.
