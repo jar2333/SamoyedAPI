@@ -6,3 +6,6 @@ pytest_cov==4.1.0
 ruff==0.3.3
 gunicorn==21.2.0
 google_cloud_datastore==2.19.0
+beautifulsoup4==4.12.3
+soupsieve==2.5
+lxml==5.2.0
