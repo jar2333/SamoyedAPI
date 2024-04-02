@@ -1,0 +1,10 @@
+<div id="books">
+    {% for result in results %}
+    <div class="book">
+        <img alt="{{result['title']}}" src="{{result['image_url']}}">
+        <a href="{{result['url']}}"><p>{{result['title']}}</p></a>
+        <a href="{{result['author_url']}}"><p>By {{result['author']}}</p></a>
+        <p>Progress: {{result['progress']}}%</p>
+    </div>
+    {% endfor %}
+</div>

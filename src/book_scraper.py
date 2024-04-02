@@ -31,17 +31,16 @@ class BookScraper:
 
         # Iterate through children
         out = []
-        for child in root.children:
-            if isinstance(child, str) or child["class"] == "clear":
-                continue
+        for child in root.select("div.Updates"):
+            assert child.name == "div"
 
             # Get first column tags
-            c1 = soup.select_one("div.firstcol")
+            c1 = child.select_one("div.firstcol")
 
             image_tag = c1.img
 
             # Get second column tags
-            c2 = soup.select_one("div.secondcol")
+            c2 = child.select_one("div.secondcol")
 
             info_tag = c2.select_one("div.whos-review")
 
@@ -60,9 +59,16 @@ class BookScraper:
 
             image_url = image_tag["src"]
 
-            progress_percent = progress_tag.text.strip("()%")
-            assert progress_percent.isdigit()
-
+            # Extract progress percentage
+            progress_text = progress_tag.text.strip("()%")
+            if progress_text.startswith("page"):
+                split = progress_text.split()
+                current = int(split[1])
+                total = int(split[-1])
+                progress_percent = (100*current)//total
+            else:
+                progress_percent = int(progress_text)
+            
             # Output parsed data
             out.append({
                 "title": title,
