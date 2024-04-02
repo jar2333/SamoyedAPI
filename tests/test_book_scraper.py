@@ -212,7 +212,7 @@ def test_book_scraper_parser():
 
     """
 
-    scraper = BookScraper()
+    scraper = BookScraper("mock")
 
     responses = scraper.parse(html)
 
