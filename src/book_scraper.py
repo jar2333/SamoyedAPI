@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 class BookScraper:
     def __init__(self, url: str):
+        assert url is not None
         self.url = url
 
     def scrape(self) -> List[Dict[str, str]]:
