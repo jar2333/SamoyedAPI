@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 from flask_caching import Cache
 
+from env import GOODREADS_URL
+
 from src.book_scraper import BookScraper
 
 """
@@ -11,7 +13,7 @@ SCRIPT_NAME = "/api"
 """
 Scraper for book API
 """
-SCRAPER = BookScraper("")
+SCRAPER = BookScraper(GOODREADS_URL)
 
 """
 App configuration
