@@ -185,5 +185,5 @@ def test_book_scraper_parser():
             "author": "Sylvia Plath",
             "author_url": "http://goodreads.com/author/show/4379.Sylvia_Plath",
             "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554582218l/6514._SX98_.jpg",
-            "progress": "4"
+            "progress": 4
     } == responses[0]
