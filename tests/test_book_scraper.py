@@ -163,7 +163,7 @@ def test_book_scraper_parser():
   </div>
 
   &nbsp;
-    <a onclick="if (typeof(clickPageOfBook) == 'function') {clickPageOfBook(594288, , {viewLink: '<a class=\&quot;greyText\&quot; href=\&quot;https://www.goodreads.com/user_status/show/813489194\&quot;>Mar 26, 2024 11:47PM<\/a>'});return false;};" class="greyText smallText" href="https://www.goodreads.com/user_status/show/813489194">(4%)</a>
+    <a onclick="if (typeof(clickPageOfBook) == 'function') {clickPageOfBook(594288, , {viewLink: '<a class=\&quot;greyText\&quot; href=\&quot;https://www.goodreads.com/user_status/show/13489194\&quot;>Mar 26, 2024 11:47PM<\/a>'});return false;};" class="greyText smallText" href="https://www.goodreads.com/user_status/show/13489194">(4%)</a>
 
   <br class="clear">
     <span class="readable">
@@ -172,43 +172,6 @@ def test_book_scraper_parser():
 
 
 <span class="greyText">—</span>
-<a class="greyText" href="https://www.goodreads.com/user_status/show/813489194">Mar 26, 2024 11:47PM</a>
-
-            </div>
-
-                <br class="clear">
-                <table>
-                
-
-        <tbody><tr class="no_border feedFooterReview" id="update_comment_stuff_Review4917911731">
-            <td>&nbsp;</td>
-        <td colspan="2">
-            <div class="updateActionLinks">
-
-
-
-
-
-                            <a class="updatedTimestamp" ref="timestamp" href="/review/show/4917911731">Sept 30, 2019 09:00AM</a>
-        &nbsp;·&nbsp;<a id="commentLink_4917911731" href="#" onclick="comment_form_for('review', 4917911731, true, ''); return false;">comment</a>
-            </div>
-
-
-            <div id="comments_for_review_4917911731" style="display: none;">
-        </div>
-        <div class="brown_comment" id="comments_form_review_4917911731" style="display: none">
-        <textarea class="placeholder_text" onclick="expand_comment_form_for('review', 4917911731, true, '')">Write a comment...</textarea>
-        </div>
-
-        </td>
-        </tr>
-
-                </tbody></table>
-            </div>
-            </div>
-
-
-        <div class="clear"></div></div>
 
     """
 
