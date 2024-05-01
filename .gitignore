@@ -174,3 +174,4 @@ cython_debug/
 .ruff_cache
 
 env_variables.yaml
+env.ps1
