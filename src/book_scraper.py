@@ -3,6 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 
 class BookScraper:
+    """
+    Scrapes the available book data at the given url.
+    """
+    
     def __init__(self, url: str):
         assert url is not None
         self.url = url
