@@ -1,13 +1,11 @@
 from typing import List, Dict
 import requests
 from bs4 import BeautifulSoup
-from cachetools import cached, TTLCache
 
 class BookScraper:
     def __init__(self, url: str):
         self.url = url
 
-    @cached(cache=TTLCache(maxsize=1, ttl=86400))
     def scrape(self) -> List[Dict[str, str]]:
         html = self.request()
         responses = self.parse(html)

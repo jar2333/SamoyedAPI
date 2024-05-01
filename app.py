@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-# from flask_caching import Cache
+from flask_caching import Cache
 
 from src.book_scraper import BookScraper
 
@@ -14,17 +14,24 @@ Scraper for book API
 SCRAPER = BookScraper("")
 
 """
+App configuration
+"""
+config = {
+    "DEBUG": True,          # some Flask specific configs
+    "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 300
+}
+
+"""
 The main application
 """
 app = Flask(__name__)
+app.config.from_mapping(config)
+
+cache = Cache(app)
 
 @app.route("/books")
+@cache.cached(timeout=86400)
 def get_books():
     results = SCRAPER.scrape()
-
-    accepts = request.headers.get("Accept")
-    match accepts:
-        case "text/html":
-            return render_template("books.html", results)
-        case _:
-            return jsonify(results)
+    return render_template("books.html", results), 200
