@@ -36,4 +36,4 @@ cache = Cache(app)
 @cache.cached(timeout=86400)
 def get_books():
     results = SCRAPER.scrape()
-    return render_template("books.html", results), 200
+    return render_template("books.html", results=results), 200
