@@ -172,3 +172,6 @@ cython_debug/
 #.idea/
 
 .ruff_cache
+
+env_variables.yaml
+env.ps1
